@@ -21,13 +21,40 @@ const db = mysql.createConnection(
     console.log('Connected to the election database.')
 );
 
-db.query(`SELECT * FROM candidates`, (err, rows) => {
-    //a query is a request to the database
-    //rows gets the value returned from the request written on the left
-    //if a table is returned it becomes an object
-    console.log(rows);
-})
+// db.query(`SELECT * FROM candidates`, (err, rows) => {
+//     //a query is a request to the database
+//     //rows gets the value returned from the request written on the left
+//     //if a table is returned it becomes an object
+//     console.log(rows);
+// })
 
+// GET a single candidate
+// db.query(`SELECT * FROM candidates WHERE id>10`, (err, row) => {
+//     if (err) {
+//       console.log(err);
+//     }
+//     console.log(row);
+// });
+
+// Delete a candidate
+// db.query(`DELETE FROM candidates WHERE id = ?`, 1, (err, result) => {
+//     if (err) {
+//       console.log(err);
+//     }
+//     console.log(result);
+// });
+
+// Create a candidate
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected) 
+//               VALUES (?,?,?,?)`;
+// const params = [1, 'Ronald', 'Firbank', 1];
+
+// db.query(sql, params, (err, result) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log(result);
+// });
 
 //Default response for any other request (Not Found)
 //goes through if /extension is not defined. keep it last!
