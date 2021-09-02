@@ -62,7 +62,7 @@ app.delete('/api/candidate/:id', (req, res) => {
 
     db.query(sql, params, (err, result) => {
         if (err) {
-          res.statusMessage(400).json({error: res.message});
+          res.status(400).json({error: res.message});
         }
         else if (!result.affectedRows){
             res.json({
